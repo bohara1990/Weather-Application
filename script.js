@@ -7,8 +7,8 @@ function getWeatherapp () {
         return;
     }
 
-    const currentWeatherUrl = 'https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={376222bc810332a49993a7440d46afb1}';
-    const forecastUrl = 'https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={376222bc810332a49993a7440d46afb1}';
+    const currentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${376222bc810332a49993a7440d46afb1}';
+    const forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${376222bc810332a49993a7440d46afb1}';
 
     fetch(currentWeatherUrl)
         .then(response => response.json())
@@ -46,7 +46,6 @@ function displayWeather(data) {
         weatherInfoDiv.innerHTML = `<p>${data.message}</p>`;
     } else {
         const cityName = data.name;
-        const temperature = Math.round(data.main.temp - 273.15); // Convert to Celsius
         const description = data.weather[0].description;
         const iconCode = data.weather[0].icon;
         const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
