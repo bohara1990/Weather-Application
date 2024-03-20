@@ -77,6 +77,7 @@ function displayHourlyForecast(hourlyData) {
     next24Hours.forEach(item => {
         const dateTime = new Date(item.dt * 1000); // Convert timestamp to milliseconds
         const hour = dateTime.getHours();
+        const temperature =Math.round(item.main.temp)
     
         const iconCode = item.weather[0].icon;
         const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
