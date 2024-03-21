@@ -8,7 +8,7 @@ function getWeatherapp () {
     }
 
     const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=376222bc810332a49993a7440d46afb1`;
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=&{city}&appid=376222bc810332a49993a7440d46afb1`;
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=376222bc810332a49993a7440d46afb1`;
 
     fetch(currentWeatherUrl)
         .then(response => response.json())
@@ -73,7 +73,6 @@ function displayHourlyForecast(hourlyData) {
     const hourlyForecastDiv = document.getElementById('hourly-forecast');
 
     const next24Hours = hourlyData.slice(0, 8); // Display the next 24 hours (3-hour intervals)
-
     next24Hours.forEach(item => {
         const dateTime = new Date(item.dt * 1000); // Convert timestamp to milliseconds
         const hour = dateTime.getHours();
