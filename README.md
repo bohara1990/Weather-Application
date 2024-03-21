@@ -5,4 +5,4 @@ Steps to Clone and Open
 
 1. Clone this package
 2. Run the demo in live server from Visual Studio Code.
-3. As you try to minimize the weather app screen the background color will channge to lightblue.
+3. As you try to minimize the weather app screen the background color will change to lightblue.
