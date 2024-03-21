@@ -95,3 +95,25 @@ button:hover {
     color: #fff;
     margin-top: 10px;
 }
+
+/* Style for desktop and larger devices */
+.weather-container {
+    width: 600px;
+    height: 400px;
+    /* other styles */
+  }
+  
+  /* Style for phones and smaller devices */
+  @media only screen and (max-width: 600px) {
+    .weather-container {
+      width: 100%;
+      height: auto;
+      /* other styles */
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  }
